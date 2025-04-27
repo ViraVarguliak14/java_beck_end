@@ -12,7 +12,7 @@ public class Worker implements Runnable {
         while (true) {
             Runnable task = taskBoard.getTask();
             System.out.println(name + " is executing task...");
-            task.run(); // запускаем задачу!
+            task.run();
         }
     }
 }

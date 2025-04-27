@@ -11,7 +11,7 @@ public class TaskBoardImpl1 implements TaskBoard {
     @Override
     public void setTask(Runnable task) {
         try {
-            tasks.put(task); // будет ждать, если нет места
+            tasks.put(task);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new RuntimeException("Interrupted while setting task", e);
@@ -21,7 +21,7 @@ public class TaskBoardImpl1 implements TaskBoard {
     @Override
     public Runnable getTask() {
         try {
-            return tasks.take(); // будет ждать, если нет задач
+            return tasks.take();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new RuntimeException("Interrupted while getting task", e);
