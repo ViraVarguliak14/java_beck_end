@@ -1,10 +1,12 @@
-import java.util.LinkedList;
-import java.util.Queue;
+package com.varvera.src;
+
+import java.util.*;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class TaskBoardImpl2 implements TaskBoard {
+    public static final int QUEUE_CAPACITY = 10;
     private Queue<String> tasks = new LinkedList<>();
 
     private Lock lock = new ReentrantLock();
@@ -17,8 +19,8 @@ public class TaskBoardImpl2 implements TaskBoard {
         lock.lock();
 
         try {
- /*
-            while (this.task != null) {
+
+            while (this.tasks.size() >= QUEUE_CAPACITY) {
                 try {
                     managerCondition.await();         // !!!! не wait()
                 } catch (InterruptedException e) {
@@ -26,7 +28,7 @@ public class TaskBoardImpl2 implements TaskBoard {
                 }
             }
 
-  */
+
             this.tasks.offer(task);
             workerCondition.signal();   // !!!!  не notify()
 
@@ -47,7 +49,9 @@ public class TaskBoardImpl2 implements TaskBoard {
                 }
             }
             String result = tasks.poll();
-            managerCondition.signal();
+            if (tasks.size()<QUEUE_CAPACITY) {
+                managerCondition.signal();
+            }
             return result;
 
         } finally {

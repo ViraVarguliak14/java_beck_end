@@ -1,3 +1,4 @@
+package com.varvera.src;
 
 public class Main {
     private final static int N_TASKS=20;

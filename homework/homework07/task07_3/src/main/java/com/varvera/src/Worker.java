@@ -1,3 +1,5 @@
+package com.varvera.src;
+
 public class Worker implements Runnable{
     private TaskBoard taskBoard;
     private String name;

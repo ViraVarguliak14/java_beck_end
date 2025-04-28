@@ -1,3 +1,5 @@
+package com.varvera.src;
+
 public class Manager implements Runnable{
     private TaskBoard taskBoard;
     private  int nTask;
