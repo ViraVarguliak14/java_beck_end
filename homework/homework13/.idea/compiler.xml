@@ -4,10 +4,5 @@
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="hom13_1" target="17" />
-      <module name="hom13_2" target="17" />
-      <module name="lesson14_hom_1" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>
