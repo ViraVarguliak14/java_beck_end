@@ -15,7 +15,7 @@ public class TaskController {
         this.taskRepository = taskRepository;
     }
 
-    @GetMapping
+    @GetMapping("/tasks")
     public List<Task> getAllTasks() {
         return taskRepository.findAll();
     }
@@ -25,7 +25,7 @@ public class TaskController {
         return taskRepository.findById(id);
     }
 
-    @PostMapping
+    @PostMapping("/tasks")
     public Task createTask(@RequestBody Task task) {
         return taskRepository.save(task);
     }

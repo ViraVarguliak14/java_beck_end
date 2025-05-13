@@ -37,17 +37,11 @@ public class ProgrammerRepositoryImpl implements ProgrammerRepository {
     public void assignTaskToProgrammer(Long programmerId, Long taskId) {
          programmers.remove(programmerId);
     }
-    @Override
-    public void deleteById(Long id){
-        programmers.remove(id);
-    }
+
     @Override
     public void removeTaskFromProgrammer(Long programmerId, Long taskId) {
        programmers.remove(programmerId);
     }
-
-
-
 
 
 }

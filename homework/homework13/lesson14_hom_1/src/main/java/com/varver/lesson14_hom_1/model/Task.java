@@ -1,15 +1,18 @@
-package com.varver.hom13_1.model;
+package com.varver.lesson14_hom_1.model;
 
 
 import lombok.*;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
+@NoArgsConstructor
 @ToString
+@EqualsAndHashCode(of="id")
 public class Task {
     @Setter
     private Long id;
     private String description;
-    private String priority;
+    private Priority priority;
+
+
 }

@@ -8,7 +8,6 @@ public interface ProgrammerRepository {
     List<Programmer> findAll();
     Programmer findById(Long id);
     Programmer save(Programmer programmer);
-    void deleteById(Long id);
     void assignTaskToProgrammer(Long programmerId, Long taskId);
     void removeTaskFromProgrammer(Long programmerId, Long taskId);
 }

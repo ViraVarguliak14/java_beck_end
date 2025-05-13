@@ -33,7 +33,7 @@ public class ProgrammerController {
         return programmerRepository.save(programmer);
     }
 
-    @PutMapping("/{programmerId}/tasks/{taskId}")
+    @PutMapping("/programmers/{programmerId}/tasks/{taskId}")
     public ResponseEntity<Void> assignTask(@PathVariable Long programmerId, @PathVariable Long taskId) {
         programmerRepository.assignTaskToProgrammer(programmerId, taskId);
         return ResponseEntity.ok().build();
